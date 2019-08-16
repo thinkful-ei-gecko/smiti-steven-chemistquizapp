@@ -9,7 +9,7 @@ const STORE = [
       c: 'HO',
       d: 'H3O+'
     },
-    correctAnswer: 'a:'
+    correctAnswer: 'a'
   },
   {
     question: 'Which of these elements is the building block of life on earth?',
@@ -69,11 +69,33 @@ startQuiz function will pull up first question
 create new box for question to live in
 */
 function startQuiz() {
-  $('.flex-button').submit(function(event) {
+  $('.flex-button').on('click', function(event) {
     event.preventDefault();
-    
-
-  })
+    $('main').html(`
+        <section class='questionView'>
+          <h2 class='currentQuestion'>${STORE[0].question}</h2>
+        <form class='answerForm'>
+          <label>
+          <input type="radio" value="a" name="answer">
+          ${STORE[0].answers.a}
+          </label>
+          <label>
+            <input type="radio" value="a" name="answer">
+          ${STORE[0].answers.b}
+          </Label>
+          <label>
+            <input type="radio" value="a" name="answer">
+          ${STORE[0].answers.c}
+          </label>
+          <label>
+            <input type="radio" value="a" name="answer">
+          ${STORE[0].answers.d}
+          </label>
+          <button>Submit Answer</button>
+        </form>
+        </section>
+    `);
+  });
 }
 
 /*
