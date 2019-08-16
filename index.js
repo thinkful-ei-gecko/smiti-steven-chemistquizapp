@@ -64,7 +64,7 @@ const STORE = [
 ];
 
 /*
-Once 'start quiz' button is pressed, 
+Once 'start quiz' button is pressed,
 startQuiz function will pull up first question
 create new box for question to live in
 */
@@ -72,34 +72,35 @@ function startQuiz() {
   $('.flex-button').submit(function(event) {
     event.preventDefault();
     
+
   })
 }
 
 /*
 if user selects correct answer,
-celebratory image pop up and a congratulatory text 
+celebratory image pop up and a congratulatory text
  */
 function selectedCorrectAnswer() {}
 
-/* 
+/*
 say selected answer was wrong,
 state correct answer
 */
 function selectedWrongAnswer() {}
 
-/* 
+/*
 once 'continue button' is pressed,
 new question is presented
 */
 function nextQuestion() {}
 
-/* 
+/*
 Once 'restart quiz button' is pressed,
 revert to starting point
 */
 function restartQuiz() {}
 
-/* 
+/*
 run the quiz
 */
 function runTheChemistQuiz() {
@@ -110,7 +111,7 @@ function runTheChemistQuiz() {
   restartQuiz();
 }
 
-/* 
+/*
 document ready function
 */
 $(runTheChemistQuiz);
