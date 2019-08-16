@@ -163,6 +163,11 @@ function nextQuestion() {
 }
 
 /*
+Show results when counter is equal to STORE.length - 1
+*/
+function resultsPage() {}
+
+/*
 Once 'restart quiz button' is pressed,
 revert to starting point
 */
