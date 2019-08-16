@@ -69,6 +69,18 @@ const STORE = [
   }
 ];
 
+let counter = 0;
+let score = 0;
+
+function updateScore() {
+  score++;
+  $('.currentScore').text(`Current Score: ${score}`);
+}
+
+function updateQuestionNumber() {
+  $('.questionCount').text(`Question ${counter + 1} of 6`);
+}
+
 /*
 Once 'start quiz' button is pressed,
 startQuiz function will pull up first question
@@ -79,28 +91,29 @@ function newQuestion() {
     event.preventDefault();
     $('main').html(`
       <section class='questionView'>
-        <h2 class='currentQuestion'>${STORE[0].question}</h2>
+        <h2 class='currentQuestion'>${STORE[counter].question}</h2>
       <form class='answerForm'>
         <label>
           <input type="radio" value="a" name="answer">
-           ${STORE[0].answers.a}
+           ${STORE[counter].answers.a}
         </label>
         <label>
           <input type="radio" value="b" name="answer">
-           ${STORE[0].answers.b}
+           ${STORE[counter].answers.b}
         </Label>
         <label>
           <input type="radio" value="c" name="answer">
-          ${STORE[0].answers.c}
+          ${STORE[counter].answers.c}
         </label>
         <label>
           <input type="radio" value="d" name="answer">
-          ${STORE[0].answers.d}
+          ${STORE[counter].answers.d}
         </label>
         <button>Submit Answer</button>
       </form>
       </section>
     `);
+    updateQuestionNumber();
   });
 }
 
@@ -111,7 +124,8 @@ celebratory image pop up and a congratulatory text
 function selectedCorrectAnswer() {
   $('main').on('submit', 'form', function(event) {
     event.preventDefault();
-    if(event.currentTarget.answer.value === STORE[0].correctAnswer){
+    if(event.currentTarget.answer.value === STORE[counter].correctAnswer){
+      updateScore();
       $('main').html(`
         <section>
           <h3>Correct Answer!</h3>
@@ -119,14 +133,16 @@ function selectedCorrectAnswer() {
         </section>
       `);
       nextQuestion();
+      counter++;
     } else {
       $('main').html(`
       <section>
-        <h3>Oh sorry! The correct answer was ${STORE[0].correctAnswerWritten}! </h3>
+        <h3>Oh sorry! The correct answer was ${STORE[counter].correctAnswerWritten}! </h3>
         <button>Next Question!</button>
       </section>
     `);
       nextQuestion();
+      counter++;
     }
   });
 }
