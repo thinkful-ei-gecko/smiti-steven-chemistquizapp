@@ -9,7 +9,8 @@ const STORE = [
       c: 'HO',
       d: 'H3O+'
     },
-    correctAnswer: 'a'
+    correctAnswer: 'a',
+    correctAnswerWritten: 'H2O'
   },
   {
     question: 'Which of these elements is the building block of life on earth?',
@@ -19,7 +20,8 @@ const STORE = [
       c: 'Carbon',
       d: 'Potassium'
     },
-    correctAnswer: 'c'
+    correctAnswer: 'c',
+    correctAnswerWritten: 'Carbon'
   },
   {
     question: 'What is the main element in air?',
@@ -29,7 +31,8 @@ const STORE = [
       c: 'Oxygen',
       d: 'Helium'
     },
-    correctAnswer: 'b'
+    correctAnswer: 'b',
+    correctAnswerWritten: 'Nitrogen'
   },
   {
     question: 'The symbol Ag stands for which element?',
@@ -39,7 +42,8 @@ const STORE = [
       c: 'Gold',
       d: 'Silver'
     },
-    correctAnswer: 'd'
+    correctAnswer: 'd',
+    correctAnswerWritten: 'Silver'
   },
   {
     question: 'Which of these elements react violently when exposed to water?',
@@ -49,7 +53,8 @@ const STORE = [
       c: 'Cesium',
       d: 'Helium'
     },
-    correctAnswer: 'c'
+    correctAnswer: 'c',
+    correctAnswerWritten: 'Cesium'
   },
   {
     question: 'Which of the following elements is considered a noble gas?',
@@ -59,7 +64,8 @@ const STORE = [
       c: 'Hydrogen',
       d: 'Nitrogen'
     },
-    correctAnswer: 'a'
+    correctAnswer: 'a',
+    correctAnswerWritten: 'Neon'
   }
 ];
 
@@ -68,32 +74,32 @@ Once 'start quiz' button is pressed,
 startQuiz function will pull up first question
 create new box for question to live in
 */
-function startQuiz() {
-  $('.flex-button').on('click', function(event) {
+function newQuestion() {
+  $('button').on('click', function(event) {
     event.preventDefault();
     $('main').html(`
-        <section class='questionView'>
-          <h2 class='currentQuestion'>${STORE[0].question}</h2>
-        <form class='answerForm'>
-          <label>
-            <input type="radio" value="a" name="answer">
-            ${STORE[0].answers.a}
-          </label>
-          <label>
-            <input type="radio" value="b" name="answer">
-            ${STORE[0].answers.b}
-          </Label>
-          <label>
-            <input type="radio" value="c" name="answer">
-            ${STORE[0].answers.c}
-          </label>
-          <label>
-            <input type="radio" value="d" name="answer">
-            ${STORE[0].answers.d}
-          </label>
-          <button>Submit Answer</button>
-        </form>
-        </section>
+      <section class='questionView'>
+        <h2 class='currentQuestion'>${STORE[0].question}</h2>
+      <form class='answerForm'>
+        <label>
+          <input type="radio" value="a" name="answer">
+           ${STORE[0].answers.a}
+        </label>
+        <label>
+          <input type="radio" value="b" name="answer">
+           ${STORE[0].answers.b}
+        </Label>
+        <label>
+          <input type="radio" value="c" name="answer">
+          ${STORE[0].answers.c}
+        </label>
+        <label>
+          <input type="radio" value="d" name="answer">
+          ${STORE[0].answers.d}
+        </label>
+        <button>Submit Answer</button>
+      </form>
+      </section>
     `);
   });
 }
@@ -106,9 +112,21 @@ function selectedCorrectAnswer() {
   $('main').on('submit', 'form', function(event) {
     event.preventDefault();
     if(event.currentTarget.answer.value === STORE[0].correctAnswer){
-      console.log('Good job!');
+      $('main').html(`
+        <section>
+          <h3>Correct Answer!</h3>
+          <button>Next Question!</button>
+        </section>
+      `);
+      nextQuestion();
     } else {
-      console.log('Wrong answer!');
+      $('main').html(`
+      <section>
+        <h3>Oh sorry! The correct answer was ${STORE[0].correctAnswerWritten}! </h3>
+        <button>Next Question!</button>
+      </section>
+    `);
+      nextQuestion();
     }
   });
 }
@@ -117,14 +135,16 @@ function selectedCorrectAnswer() {
 say selected answer was wrong,
 state correct answer
 */
-function selectedWrongAnswer() {}
+//function selectedWrongAnswer() {} --> added functionality to selectedCorrectAnswer
 
 /*
 once 'continue button' is pressed,
 new question is presented
  MAYBE USE A GLOBAL COUNTER?
 */
-function nextQuestion() {}
+function nextQuestion() {
+  newQuestion();
+}
 
 /*
 Once 'restart quiz button' is pressed,
@@ -136,9 +156,9 @@ function restartQuiz() {}
 run the quiz
 */
 function runTheChemistQuiz() {
-  startQuiz();
+  newQuestion();
   selectedCorrectAnswer();
-  selectedWrongAnswer();
+  //selectedWrongAnswer();
   nextQuestion();
   restartQuiz();
 }
