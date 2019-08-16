@@ -80,15 +80,15 @@ function startQuiz() {
             ${STORE[0].answers.a}
           </label>
           <label>
-            <input type="radio" value="a" name="answer">
+            <input type="radio" value="b" name="answer">
             ${STORE[0].answers.b}
           </Label>
           <label>
-            <input type="radio" value="a" name="answer">
+            <input type="radio" value="c" name="answer">
             ${STORE[0].answers.c}
           </label>
           <label>
-            <input type="radio" value="a" name="answer">
+            <input type="radio" value="d" name="answer">
             ${STORE[0].answers.d}
           </label>
           <button>Submit Answer</button>
@@ -103,11 +103,14 @@ if user selects correct answer,
 celebratory image pop up and a congratulatory text
  */
 function selectedCorrectAnswer() {
-  if($('currentTarget') === STORE.currectAnswer) {
-    console.log('Good Job');
-  } else {
-    console.log('Try again');
-  }
+  $('main').on('submit', 'form', function(event) {
+    event.preventDefault();
+    if(event.currentTarget.answer.value === STORE[0].correctAnswer){
+      console.log('Good job!');
+    } else {
+      console.log('Wrong answer!');
+    }
+  });
 }
 
 /*
