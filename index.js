@@ -9,7 +9,7 @@ const STORE = [
       c: 'HO',
       d: 'H3O+'
     },
-    correctAnswer: 'a'
+    correctAnswer: 'a:'
   },
   {
     question: 'Which of these elements is the building block of life on earth?',
@@ -68,7 +68,12 @@ Once 'start quiz' button is pressed,
 startQuiz function will pull up first question
 create new box for question to live in
 */
-function startQuiz() {}
+function startQuiz() {
+  $('.flex-button').submit(function(event) {
+    event.preventDefault();
+    
+  })
+}
 
 /*
 if user selects correct answer,

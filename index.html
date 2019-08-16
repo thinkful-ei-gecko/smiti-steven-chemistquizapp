@@ -14,13 +14,22 @@
             <h1>Chemistry Knowledge Quiz</h1>
       </header>
       <main>
+        <section class='startView'>
           <h1>Do you want take a Chemistry Quiz ? </h1>
           <button class="flex-button">Start Quiz</button>
+        </section>
+        <section class='questionView hidden'>
+          <h2 class='currentQuestion'></h2>
+          <button></button>
+        </section>
       </main>
-      <footer>Question 0 of 6 || Current Score: 0</footer>
+      <footer>
+        <ul>
+          <li class='questionCount'>Question 0 of 6</li>
+          <li class='currentScore'>Current Score: 0</li>
+        </ul>
+      </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="index.js"></script>
   </body>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="index.js"></script>
-
-  </html>
+</html>
