@@ -76,20 +76,20 @@ function startQuiz() {
           <h2 class='currentQuestion'>${STORE[0].question}</h2>
         <form class='answerForm'>
           <label>
-          <input type="radio" value="a" name="answer">
-          ${STORE[0].answers.a}
+            <input type="radio" value="a" name="answer">
+            ${STORE[0].answers.a}
           </label>
           <label>
             <input type="radio" value="a" name="answer">
-          ${STORE[0].answers.b}
+            ${STORE[0].answers.b}
           </Label>
           <label>
             <input type="radio" value="a" name="answer">
-          ${STORE[0].answers.c}
+            ${STORE[0].answers.c}
           </label>
           <label>
             <input type="radio" value="a" name="answer">
-          ${STORE[0].answers.d}
+            ${STORE[0].answers.d}
           </label>
           <button>Submit Answer</button>
         </form>
@@ -102,7 +102,13 @@ function startQuiz() {
 if user selects correct answer,
 celebratory image pop up and a congratulatory text
  */
-function selectedCorrectAnswer() {}
+function selectedCorrectAnswer() {
+  if($('currentTarget') === STORE.currectAnswer) {
+    console.log('Good Job');
+  } else {
+    console.log('Try again');
+  }
+}
 
 /*
 say selected answer was wrong,
@@ -113,6 +119,7 @@ function selectedWrongAnswer() {}
 /*
 once 'continue button' is pressed,
 new question is presented
+ MAYBE USE A GLOBAL COUNTER?
 */
 function nextQuestion() {}
 
