@@ -1,2 +1,2 @@
-This is submitted as a pair with my partner name is Steven Bull.
+This is submitted as a pair between Smiti Shakya is Steven Bull.
 
