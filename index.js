@@ -89,6 +89,7 @@ create new box for question to live in
 function newQuestion() {
   $('button').on('click', function(event) {
     event.preventDefault();
+    resultsPage();
     $('main').html(`
       <section class='questionView'>
         <h2 class='currentQuestion'>${STORE[counter].question}</h2>
@@ -163,15 +164,30 @@ function nextQuestion() {
 }
 
 /*
-Show results when counter is equal to STORE.length - 1
+Show results when counter is equal to STORE.length
 */
-function resultsPage() {}
+function resultsPage() {
+  if (counter === STORE.length) {
+    $('footer').remove();
+    $('main').html(`
+      <section>
+        <h4>Your total score is ${score} out of a possible 6! </h4>
+        <button class='restartButton'>Restart Quiz!</button>
+      </section>
+    `);
+    restartQuiz();
+  }
+}
 
 /*
 Once 'restart quiz button' is pressed,
 revert to starting point
 */
-function restartQuiz() {}
+function restartQuiz() {
+  $('.restartButton').on('click', function () {
+    location.reload();
+  });
+}
 
 /*
 run the quiz
@@ -181,7 +197,6 @@ function runTheChemistQuiz() {
   selectedCorrectAnswer();
   //selectedWrongAnswer();
   nextQuestion();
-  restartQuiz();
 }
 
 /*
