@@ -228,12 +228,12 @@ input{
     flex-direction: row;
     justify-content: space-around;
   }
-/* 
+
   label {
     height: 70px;
     width: 50%;
     text-align: center;
-    margin: 10px auto 10px auto; */
+    margin: 10px auto 10px auto;
   }
 
   .submit-button {
