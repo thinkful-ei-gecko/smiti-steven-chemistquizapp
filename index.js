@@ -161,7 +161,6 @@ function selectedCorrectAnswer() {
 /*
 once 'continue button' is pressed,
 new question is presented
- MAYBE USE A GLOBAL COUNTER?
 */
 function nextQuestion() {
   newQuestion();
