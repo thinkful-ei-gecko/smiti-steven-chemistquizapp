@@ -1,2 +1,2 @@
-This is submitted as a pair with my partner name is Steven Bull.
+This chemistry quiz app is submitted by Smiti Shakya and Steven Bull.
 
