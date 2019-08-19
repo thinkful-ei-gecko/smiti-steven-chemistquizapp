@@ -95,25 +95,25 @@ function newQuestion() {
         <h2 class='currentQuestion' aria-live='polite'>${STORE[counter].question}</h2>
       <form class='answerForm'>
         <label>
-          <input type="radio" value="a" name="answer" aria-live='${STORE[counter].answers.a}'>
+          <input type="radio" value="a" name="answer" aria-live='${STORE[counter].answers.a}' required>
             <div class="hover">
             ${STORE[counter].answers.a}
             </div>
         </label>
         <label>
-          <input type="radio" value="b" name="answer" aria-live='${STORE[counter].answers.b}'>
+          <input type="radio" value="b" name="answer" aria-live='${STORE[counter].answers.b}' required>
             <div class="hover">
             ${STORE[counter].answers.b}
             </div>
         </Label>
         <label>
-          <input type="radio" value="c" name="answer" aria-live='${STORE[counter].answers.c}'>
+          <input type="radio" value="c" name="answer" aria-live='${STORE[counter].answers.c}' required>
             <div class="hover">
             ${STORE[counter].answers.c}
             </div>
         </label>
         <label>
-          <input type="radio" value="d" name="answer" aria-live='${STORE[counter].answers.d}'>
+          <input type="radio" value="d" name="answer" aria-live='${STORE[counter].answers.d}' required>
             <div class="hover">
             ${STORE[counter].answers.d}
             </div>
