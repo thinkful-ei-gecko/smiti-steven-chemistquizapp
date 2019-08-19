@@ -15,6 +15,7 @@ body {
   font-size: 25px;
   background-color: white;
   font-weight: bold;
+  text-align: center;
 }
 header {
     display: flex;
@@ -44,8 +45,13 @@ header {
   border-radius: 12px;
   font-size: 16px;
   margin: auto;
-  cursor: pointer;
-  display:block;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 li{
@@ -53,7 +59,7 @@ li{
   list-style-type: none;
   display: inline-block;
   font-size: 18px;
-
+  margin: 10px;
 }
 
 .questionCount{
@@ -70,6 +76,7 @@ li{
   font-size: 18px;
   padding: 10px;
   margin: 10px;
+  text-align: center;
 }
 
 .answerForm{
@@ -79,12 +86,12 @@ li{
   align-content: center;
   padding: 10px;
   margin: 10px;
-
 }
 
 label{
+  display: block;
   height: 50px;
-  width: 300px;
+  width: 100%;
   background-color: skyblue;
   margin-bottom: 8px;
   border-radius: 12px;
