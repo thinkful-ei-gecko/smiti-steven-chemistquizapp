@@ -110,7 +110,7 @@ function newQuestion() {
           <input type="radio" value="d" name="answer">
           ${STORE[counter].answers.d}
         </label>
-        <button>Submit Answer</button>
+        <button class="submit-button">Submit Answer</button>
       </form>
       </section>
     `);
@@ -128,18 +128,20 @@ function selectedCorrectAnswer() {
     if(event.currentTarget.answer.value === STORE[counter].correctAnswer){
       updateScore();
       $('main').html(`
-        <section>
+        <section class="result-box" >
           <h3>Correct Answer!</h3>
-          <button>Next Question!</button>
+          <img class="logo-box" src="thumpsup.svg" alt="thumps up icon"/>
+          <button class="result-button">Next Question!</button>
         </section>
       `);
       nextQuestion();
       counter++;
     } else {
       $('main').html(`
-      <section>
+      <section class="result-box">
         <h3>Oh sorry! The correct answer was ${STORE[counter].correctAnswerWritten}! </h3>
-        <button>Next Question!</button>
+        <img class="logo-box" src="thumpsdown.svg" alt="thumps down icon"/>
+        <button  class="result-button">Next Question!</button>
       </section>
     `);
       nextQuestion();
@@ -170,9 +172,9 @@ function resultsPage() {
   if (counter === STORE.length) {
     $('footer').hide();
     $('main').html(`
-      <section>
-        <h4>Your total score is ${score} out of a possible 6! </h4>
-        <button class='restartButton'>Restart Quiz!</button>
+      <section class="result-box">
+        <h3>Your total score is ${score} out of a possible 6! </h3>
+        <button class="result-button">Restart Quiz!</button>
       </section>
     `);
     restartQuiz();

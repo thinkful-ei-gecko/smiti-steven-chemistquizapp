@@ -7,9 +7,15 @@ body {
 
 
 .logo > img {
-    width: 50px;
+    width: 10px;
   }
 
+.titleHead {
+  margin-bottom: 5px;
+  font-size: 25px;
+  background-color: white;
+  font-weight: bold;
+}
 header {
     display: flex;
     flex-direction: column;
@@ -17,23 +23,53 @@ header {
     align-items: center;
 }
 
-button {
-  background-color:	#6495ED;
-  border: none;
-  padding: 20px;
-  border-radius: 12px;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  float: center;
+.titleQuiz {
+  font-size: 18px;
+  background-color: skyblue;
+  text-align: center;
+  color: aliceblue;
+  font-family: verdana;
+  padding: 30px;
+  margin-top: 90px;
+  border-radius: 10px;
 }
 
-.questionView{
-  background-color: white;
-  height: 400px;
-  width: 500px;
-  border-radius: 12px;
 
+.flex-button {
+  background-color:	#6495ED;
+  text-align: center;
+  border: none;
+  padding: 20px;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: auto;
+  cursor: pointer;
+  display:block;
+}
+
+li{
+  height: 20px;
+  list-style-type: none;
+  display: inline-block;
+  font-size: 18px;
+
+}
+
+.questionCount{
+  background-color: blanchedalmond;
+}
+
+
+.currentScore{
+  background-color: bisque;
+}
+.currentQuestion {
+  background: white;
+  border-radius: 12px;
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .answerForm{
@@ -41,18 +77,71 @@ button {
   flex-direction: column;
   align-items: flex-start;
   align-content: center;
+  padding: 10px;
+  margin: 10px;
+
 }
 
 label{
-  height: 80px;
+  height: 50px;
   width: 300px;
-  background-color: beige;
-  margin-bottom: 5px;
+  background-color: skyblue;
+  margin-bottom: 8px;
   border-radius: 12px;
+  color: white;
+  text-align: center;
+}
 
+label:hover{
+  background-color: rgb(89, 138, 211);
+}
+
+input{
+  visibility:hidden;
+ 
+}
+
+.submit-button{
+  background-color:	#6495ED;
+  text-align: center;
+  border: none;
+  padding: 20px;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.result-box {
+  height: 200px;
+  width: 300px;
+  background-color: skyblue;
+  margin: 50px 20px 20px 20px;
+  padding: 10px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+.logo-box {
+  display: block;
+  margin: auto;
+  width: 20%;
 }
 
 
+.result-button{
+  background-color:	#6495ED;
+  text-align: center;
+  border: none;
+  padding: 20px;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: auto;
+  cursor: pointer;
+}
 
 /*Computer screen */
 @media screen and (min-width: 900px){
