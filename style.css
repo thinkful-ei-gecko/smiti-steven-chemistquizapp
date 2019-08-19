@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 
 body {
     font-family: 'Metrophobic', sans-serif;
@@ -76,7 +79,6 @@ li{
   font-size: 18px;
   padding: 10px;
   margin: 10px;
-  text-align: center;
 }
 
 .answerForm{
@@ -96,16 +98,16 @@ label{
   margin-bottom: 8px;
   border-radius: 12px;
   color: white;
-  text-align: center;
+  text-align: left;
+  padding-top: 10px;
 }
 
-label:hover{
+label:hover {
   background-color: rgb(89, 138, 211);
 }
 
 input{
-  visibility:hidden;
- 
+  visibility: hidden;
 }
 
 .submit-button{
@@ -121,10 +123,10 @@ input{
 }
 
 .result-box {
-  height: 230px;
+  height: 250px;
   width: 300px;
   background-color: skyblue;
-  margin: 50px 20px 20px 20px;
+  margin: 20px auto 20px auto;
   padding: 10px;
   border-radius: 12px;
   color: white;
@@ -151,12 +153,73 @@ input{
   cursor: pointer;
 }
 
+/* tablet view */
+@media screen and (min-width: 768px){
+  * {
+    margin-bottom: 30px;
+  }
+
+  .logo {
+    padding-top: 30px;
+  }
+
+  .titleHead {
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .titleQuiz {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .currentQuestion {
+    font-size: 28px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: auto;
+  }
+
+  label {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  li{
+    height: auto;
+    font-size: 23px;
+    margin: 10px;
+  }
+}
+
 /*Computer screen */
-@media screen and (min-width: 900px){
+@media screen and (min-width: 1024px){
+  .currentQuestion {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
   header {
     width: 65%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+  }
+
+  label {
+    height: 70px;
+    width: 50%;
+    text-align: center;
+    margin: 10px auto 10px auto;
+  }
+
+  .submit-button {
+    padding-top: 20px;
   }
 }
