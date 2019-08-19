@@ -95,25 +95,25 @@ function newQuestion() {
         <h2 class='currentQuestion' aria-live='polite'>${STORE[counter].question}</h2>
       <form class='answerForm'>
         <label>
-          <input type="radio" value="a" name="answer" aria-live='polite'>
+          <input type="radio" value="a" name="answer" aria-live='${STORE[counter].answers.a}'>
             <div class="hover">
             ${STORE[counter].answers.a}
             </div>
         </label>
         <label>
-          <input type="radio" value="b" name="answer" aria-live='polite'>
+          <input type="radio" value="b" name="answer" aria-live='${STORE[counter].answers.b}'>
             <div class="hover">
             ${STORE[counter].answers.b}
             </div>
         </Label>
         <label>
-          <input type="radio" value="c" name="answer" aria-live='polite'>
+          <input type="radio" value="c" name="answer" aria-live='${STORE[counter].answers.c}'>
             <div class="hover">
             ${STORE[counter].answers.c}
             </div>
         </label>
         <label>
-          <input type="radio" value="d" name="answer" aria-live='polite'>
+          <input type="radio" value="d" name="answer" aria-live='${STORE[counter].answers.d}'>
             <div class="hover">
             ${STORE[counter].answers.d}
             </div>
@@ -159,12 +159,6 @@ function selectedCorrectAnswer() {
 }
 
 /*
-say selected answer was wrong,
-state correct answer
-*/
-//function selectedWrongAnswer() {} --> added functionality to selectedCorrectAnswer
-
-/*
 once 'continue button' is pressed,
 new question is presented
  MAYBE USE A GLOBAL COUNTER?
@@ -199,7 +193,7 @@ function restartQuiz() {
     score = 0;
     $('main').html(`
     <section class='startView'>
-      <h2 class="titleQuiz">Do you want take a Chemistry Quiz ? </h2>
+      <h2 class="titleQuiz" aria-live='polite'>Do you want take a Chemistry Quiz ? </h2>
       <button class="flex-button">Start Quiz</button>
     </section>
     `);
@@ -216,7 +210,6 @@ run the quiz
 function runTheChemistQuiz() {
   newQuestion();
   selectedCorrectAnswer();
-  //selectedWrongAnswer();
   nextQuestion();
   restartQuiz();
 }
