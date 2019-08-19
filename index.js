@@ -186,12 +186,12 @@ Once 'restart quiz button' is pressed,
 revert to starting point
 */
 function restartQuiz() {
-  $('.restartButton').on('click', function () {
+  $('.result-button').on('click', function () {
     counter = 0;
     score = 0;
     $('main').html(`
     <section class='startView'>
-      <h1>Do you want take a Chemistry Quiz ? </h1>
+      <h2 class="titleQuiz">Do you want take a Chemistry Quiz ? </h2>
       <button class="flex-button">Start Quiz</button>
     </section>
     `);
@@ -210,6 +210,7 @@ function runTheChemistQuiz() {
   selectedCorrectAnswer();
   //selectedWrongAnswer();
   nextQuestion();
+  restartQuiz();
 }
 
 /*

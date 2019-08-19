@@ -114,7 +114,7 @@ input{
 }
 
 .result-box {
-  height: 200px;
+  height: 230px;
   width: 300px;
   background-color: skyblue;
   margin: 50px 20px 20px 20px;
@@ -128,6 +128,7 @@ input{
   display: block;
   margin: auto;
   width: 20%;
+  padding-bottom: 20px;
 }
 
 
