@@ -92,28 +92,28 @@ function newQuestion() {
     resultsPage();
     $('main').html(`
       <section class='questionView'>
-        <h2 class='currentQuestion'>${STORE[counter].question}</h2>
+        <h2 class='currentQuestion' aria-live='polite'>${STORE[counter].question}</h2>
       <form class='answerForm'>
         <label>
-          <input type="radio" value="a" name="answer">
+          <input type="radio" value="a" name="answer" aria-live='polite'>
             <div class="hover">
             ${STORE[counter].answers.a}
             </div>
         </label>
         <label>
-          <input type="radio" value="b" name="answer">
+          <input type="radio" value="b" name="answer" aria-live='polite'>
             <div class="hover">
             ${STORE[counter].answers.b}
             </div>
         </Label>
         <label>
-          <input type="radio" value="c" name="answer">
+          <input type="radio" value="c" name="answer" aria-live='polite'>
             <div class="hover">
             ${STORE[counter].answers.c}
             </div>
         </label>
         <label>
-          <input type="radio" value="d" name="answer">
+          <input type="radio" value="d" name="answer" aria-live='polite'>
             <div class="hover">
             ${STORE[counter].answers.d}
             </div>
@@ -137,7 +137,7 @@ function selectedCorrectAnswer() {
       updateScore();
       $('main').html(`
         <section class="result-box" >
-          <h3>Correct Answer!</h3>
+          <h3 aria-live='polite'>Correct Answer!</h3>
           <img class="logo-box" src="thumpsup.svg" alt="thumps up icon"/>
           <button class="result-button">Next Question!</button>
         </section>
@@ -147,7 +147,7 @@ function selectedCorrectAnswer() {
     } else {
       $('main').html(`
       <section class="result-box">
-        <h3>Oh sorry! The correct answer was ${STORE[counter].correctAnswerWritten}! </h3>
+        <h3 aria-live='polite'>Oh sorry! The correct answer was ${STORE[counter].correctAnswerWritten}! </h3>
         <img class="logo-box" src="thumpsdown.svg" alt="thumps down icon"/>
         <button  class="result-button">Next Question!</button>
       </section>
@@ -181,7 +181,7 @@ function resultsPage() {
     $('footer').hide();
     $('main').html(`
       <section class="result-box">
-        <h3>Your total score is ${score} out of a possible 6! </h3>
+        <h3 aria-live='polite'>Your total score is ${score} out of a possible 6! </h3>
         <button class="result-button">Restart Quiz!</button>
       </section>
     `);
