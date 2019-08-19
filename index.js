@@ -168,7 +168,7 @@ Show results when counter is equal to STORE.length
 */
 function resultsPage() {
   if (counter === STORE.length) {
-    $('footer').remove();
+    $('footer').hide();
     $('main').html(`
       <section>
         <h4>Your total score is ${score} out of a possible 6! </h4>
@@ -185,9 +185,20 @@ revert to starting point
 */
 function restartQuiz() {
   $('.restartButton').on('click', function () {
-    location.reload();
+    counter = 0;
+    score = 0;
+    $('main').html(`
+    <section class='startView'>
+      <h1>Do you want take a Chemistry Quiz ? </h1>
+      <button class="flex-button">Start Quiz</button>
+    </section>
+    `);
+    $('footer').show();
+    $('.currentScore').text('Current Score: 0');
+    $('.questionCount').text('Question 0 of 6');
+    newQuestion();
   });
-}
+} 
 
 /*
 run the quiz
